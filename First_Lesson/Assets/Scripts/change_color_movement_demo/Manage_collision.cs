@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class Manage_collision : MonoBehaviour
 {
-    //Declare variable to manipulate the material of the object
-    MeshRenderer thisRenderer; 
-    Vector3 startPosition;
-    float velocity = 1.0E-0f;
-    int left_right;
+
+    MeshRenderer thisRenderer; // meshrender component of the object 
+    Vector3 startPosition; // start position of the object in the x,y,z space
+    float velocity = 1.0E-0f; // costant value fot the velocity of the object
+    int left_right; //integer value used to decide in which direction a new ball will be created
+
     // Start is called before the first frame update
+
 
     void Start()
     {
@@ -25,6 +27,7 @@ public class Manage_collision : MonoBehaviour
     }
 
 
+
    private void Update() {
        //change object position
        Vector3 oldPosition = this.transform.position;
@@ -33,16 +36,22 @@ public class Manage_collision : MonoBehaviour
    }
 
 
+   /*
+   This function is called when the object "other" collide with this object or viceversa. 
+   Our main goal is to change the color of the colliding object.
+   */
     private void OnTriggerEnter(Collider other) {
        Debug.Log("Change color of object collided with us"); 
        Material new_material = new Material(thisRenderer.material);
        Color new_color = getRandomColor(); 
        new_material.SetColor("_Color",  new_color);
        thisRenderer.material = new_material;
-      
     }
 
 
+   /*
+   This function returns a Color object which is defined by a triplet of float values, indicating the value of R,G and B channels that defines a color in the RGB space.
+   */
     private Color getRandomColor(){
        Color randomColor = new Color(Random.Range(0.0f,1.0f),
                                     Random.Range(0.0f,1.0f),
@@ -50,6 +59,10 @@ public class Manage_collision : MonoBehaviour
         return randomColor;
    }
 
+
+   /*
+   This function return a Vector3 type, indicating the position in which the object lies in x,y,z space at the start of the simulation.  
+   */
    public Vector3 getStartPosition(){
       return startPosition;
    }
