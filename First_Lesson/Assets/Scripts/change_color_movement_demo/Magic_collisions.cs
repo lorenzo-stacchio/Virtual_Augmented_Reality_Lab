@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Manage_collision : MonoBehaviour
+
+public class Magic_collisions : MonoBehaviour
 {
 
     MeshRenderer thisRenderer; // meshrender component of the object 
@@ -31,7 +32,6 @@ public class Manage_collision : MonoBehaviour
    private void Update() {
        //change object position
        Vector3 oldPosition = this.transform.position;
-       Debug.Log(oldPosition[0]);
        this.transform.position = new Vector3(oldPosition[0] + left_right*Time.deltaTime*velocity, oldPosition[1] , oldPosition[2]);
    }
 
@@ -41,7 +41,6 @@ public class Manage_collision : MonoBehaviour
    Our main goal is to change the color of the colliding object.
    */
     private void OnTriggerEnter(Collider other) {
-       Debug.Log("Change color of object collided with us"); 
        Material new_material = new Material(thisRenderer.material);
        Color new_color = getRandomColor(); 
        new_material.SetColor("_Color",  new_color);
