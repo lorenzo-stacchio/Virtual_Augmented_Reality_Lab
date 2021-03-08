@@ -12,4 +12,5 @@ To open and use the project created during the lab lessons, you should have inst
 
 You can install it via [Unity Hub](https://unity3d.com/get-unity/download) (**recommended**). 
 
+You also need to install the [GoogleVRForUnity package](https://github.com/googlevr/gvr-unity-sdk/releases) and insert into project where is needed. This package is used to export a Unity application to the smartphone (read more [here](https://developers.google.com/cardboard/develop/unity/quickstart)).
 
