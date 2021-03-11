@@ -1,0 +1,26 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+
+//https://docs.unity3d.com/ScriptReference/Object.Destroy.html
+public class mushroom : GazeableObject
+{
+
+    
+	public void Start(){
+
+	}
+
+    public override void OnPress(RaycastHit hitInfo)
+    {
+        base.OnPress(hitInfo);  
+        if(myPlayer.instance.activeMode == InputMode.COLLECT){  
+            myPlayer.instance.collect_mushroom();
+            Destroy(gameObject);
+        }
+        //Destroy(this);
+    }
+
+}

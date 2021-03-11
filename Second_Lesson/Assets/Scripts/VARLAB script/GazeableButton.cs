@@ -34,7 +34,7 @@ public class GazeableButton : GazeableObject {
 		if (parentPanel != null) {
 			parentPanel.SetActiveButton (this);
 		} else {
-			Debug.LogError ("Button not a child of object with VRPanel component. ", this);
+			//Debug.LogError ("Button not a child of object with VRPanel component. ", this);
 		}
 
 	}

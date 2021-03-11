@@ -75,8 +75,7 @@ public class GazeSystem : MonoBehaviour {
 		//Debug.Log(Input.GetMouseButton(0));
 		//Debug.Log(currentGazeObject);
 		if (currentGazeObject != null){
-			Debug.Log("PORCO DIOOOOOOOOOOOOOOOOOOO");
-			Debug.Log(currentGazeObject);
+			//Debug.Log(currentGazeObject);
 		}
 		//Check for down (press the button, in that very moment)
 		if (Input.GetMouseButtonDown (0) && currentGazeObject != null) {

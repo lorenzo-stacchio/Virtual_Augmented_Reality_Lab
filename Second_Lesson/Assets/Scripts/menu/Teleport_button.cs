@@ -17,25 +17,15 @@ public class Teleport_button : GazeableObject
     public override void OnPress(RaycastHit hitInfo)
     {
         base.OnPress(hitInfo);
-        //if (choose_pic_button.is_active)
-        //{
-            myPlayer.instance.activeMode = InputMode.TELEPORT;
-           	is_active = true;
-        //}
-        //else {
-		//	is_active = true;
-		//}
-		//choose_pic_button.is_active = false;
-		//explore_button.is_active = false;
+		myPlayer.instance.activeMode = InputMode.TELEPORT;
+        is_active = true;
     }
 
 	void Update(){
-		if (is_active){
-			GameObject teleport_button_ = GameObject.Find("Teleport") as GameObject;
-			teleport_button_.GetComponent<Image>().color = Color.green;
+		if (myPlayer.instance.activeMode==InputMode.TELEPORT){
+			this.GetComponent<Image>().color = Color.green;
 		} else {
-			GameObject teleport_button_ = GameObject.Find("Teleport") as GameObject;
-			teleport_button_.GetComponent<Image>().color = Color.white;
+			this.GetComponent<Image>().color = Color.white;
 		}
 	}
 }

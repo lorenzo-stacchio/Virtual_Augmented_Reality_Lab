@@ -30,7 +30,7 @@ public class VRCanvas : MonoBehaviour {
 			currentActiveButton = activeButton;
 			currentActiveButton.SetButtonColor (selectedColor);
 		} else {
-			Debug.Log ("Resetting");
+			//Debug.Log ("Resetting");
 			currentActiveButton = null;
 			myPlayer.instance.activeMode = InputMode.NONE;
 		}

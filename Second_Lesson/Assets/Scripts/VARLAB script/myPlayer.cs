@@ -7,8 +7,7 @@ public enum InputMode
 {
     NONE,
     TELEPORT,
-    CHOOSE_PIC,
-    EXPLORE,
+    COLLECT
 }
 
 
@@ -16,6 +15,8 @@ public class myPlayer : MonoBehaviour
 {
     public static myPlayer instance;
     public InputMode activeMode;
+    public int mushrooms_collected;  
+
 
     void Awake()
     {
@@ -24,7 +25,9 @@ public class myPlayer : MonoBehaviour
             GameObject.Destroy(instance.gameObject);
         }
         instance = this;
+        this.mushrooms_collected = 0;  
     }
+
 
     // Start is called before the first frame update
     void Start()
@@ -32,9 +35,23 @@ public class myPlayer : MonoBehaviour
         this.activeMode = InputMode.TELEPORT;
     }
 
+
     // Update is called once per frame
     void Update()
     {
         //Debug.Log(this.activeMode);
     }
+
+
+    public void collect_mushroom(){
+        this.mushrooms_collected +=1;
+        Debug.Log("NUMERO FUNGHI");
+        Debug.Log(this.mushrooms_collected);
+    } 
+
+    public int collected_mushrooms(){
+        return this.mushrooms_collected;
+    }
+
+
 }
