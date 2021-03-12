@@ -39,7 +39,7 @@ public class myPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("user" + this.activeMode.ToString());
+        //Debug.Log("user" + this.activeMode.ToString());
     }
 
 

@@ -560,7 +560,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aaf78eee2248b241ba7d40972cb3587, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mushrooms_numbers: 10
+  mushrooms_numbers: 500
   playground: {fileID: 977702751}
   myPrefab: {fileID: 8486024824091924603, guid: 6c4bf93cfdb52944e870a90d4ca04838,
     type: 3}
@@ -917,10 +917,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 874708689}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3cfe186d198bfc4e9aecc85e7874a63, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c80cb607865ed3478b29ba3b1704e67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mode: 0
+  button_mode: 1
 --- !u!65 &874708695
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1240,10 +1240,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1028400663}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 965b52fb2ddfd104ab930a53fd168726, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c80cb607865ed3478b29ba3b1704e67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mode: 0
+  button_mode: 2
 --- !u!1 &1032768779
 GameObject:
   m_ObjectHideFlags: 0
@@ -1749,7 +1749,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1343641953}
   m_LocalRotation: {x: 0, y: 0.2588191, z: 0, w: 0.9659258}
-  m_LocalPosition: {x: 0, y: 0, z: 3.38}
+  m_LocalPosition: {x: 0, y: 0, z: 3.23}
   m_LocalScale: {x: 0.05, y: 0.05, z: 1}
   m_Children:
   - {fileID: 129285126}
@@ -1758,7 +1758,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 30, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 1.85, y: 0.11}
+  m_AnchoredPosition: {x: 2.11, y: 0.11}
   m_SizeDelta: {x: 30, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1343641955
