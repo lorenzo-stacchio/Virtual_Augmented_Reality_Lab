@@ -3,28 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Collect : GazeableObject
+public class Collect : GazeableButton
 {
 
-    [SerializeField]
-    private InputMode mode;
-	public static bool is_active;
-
-	public void Start(){
-		is_active = false;
+	//override method in gazeable button
+	public override void Start(){
+		base.Start();
+        representativeMode = InputMode.COLLECT;
 	}
 
     public override void OnPress(RaycastHit hitInfo)
     {
         base.OnPress(hitInfo);
-        myPlayer.instance.activeMode = InputMode.COLLECT;
     }
 
-	void Update(){
-		if (myPlayer.instance.activeMode==InputMode.COLLECT){
-			this.GetComponent<Image>().color = Color.green;
-		} else {
-			this.GetComponent<Image>().color = Color.white;
-		}
-	}
 }

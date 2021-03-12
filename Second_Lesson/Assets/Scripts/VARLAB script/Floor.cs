@@ -8,7 +8,7 @@ public class Floor : GazeableObject {
 	public override void OnPress (RaycastHit hitInfo)
 	{
 		base.OnPress (hitInfo);
-
+		Debug.Log(myPlayer.instance.activeMode);
 		if (myPlayer.instance.activeMode == InputMode.TELEPORT) {
 			Vector3 destLocation = hitInfo.point;
 			destLocation.y = myPlayer.instance.transform.position.y;

@@ -6,29 +6,28 @@ using UnityEngine.UI;
 
 public class Game_Manager : GazeableObject
 {
-
 	public static bool end;
-    int shifting_bound = 3;
+    int shifting_bound = 2; //use to avoid to spawn at the limits of the playground
     [SerializeField]
-    private int mushrooms_numbers = 3;
+    private int mushrooms_numbers;
     public GameObject playground;
     public GameObject myPrefab;
-
     public GameObject house_to_avoid; 
 
 	public void Start(){
 		end = false;
         //get mushroom objects
         GameObject mushrooms = GameObject.Find("mushrooms");
-        //Create n mushroom objects (n=mushrooms_numbers) randomly in the playfield
+        //Calcuate vertixes of the house area
         Vector3 center = playground.GetComponent<MeshRenderer>().bounds.center; //get the center of the plane
         Vector3 objectSize = playground.GetComponent<MeshRenderer>().bounds.size; //get size of the plane
         float top_left_x = center.x - (objectSize.x/2 - shifting_bound); //start x coordinate 
         float top_left_z = center.z - (objectSize.z/2 - shifting_bound); //start y coordinate
-        float bot_right_x = center.x + (objectSize.x/2 -shifting_bound); //end x coordinate
-        float bot_right_z = center.z + (objectSize.z/2 -shifting_bound); //end y coordinate
+        float bot_right_x = center.x + (objectSize.x/2 - shifting_bound); //end x coordinate
+        float bot_right_z = center.z + (objectSize.z/2 - shifting_bound); //end y coordinate
         float y = center.y + 1; 
-        Debug.Log("Playground" + center.ToString() + " " + objectSize.ToString());
+        //Debug.Log("Playground" + center.ToString() + " " + objectSize.ToString());
+        //Create n mushroom objects (n=mushrooms_numbers) randomly in the playfield
         for (int i = 0; i < mushrooms_numbers; i++)
         {
             bool out_of_house = false; //test out of house
@@ -54,6 +53,7 @@ public class Game_Manager : GazeableObject
         Vector3 center = house_to_avoid.GetComponent<MeshRenderer>().bounds.center; //get the center of the plane
         Vector3 objectSize = house_to_avoid.GetComponent<MeshRenderer>().bounds.size; //get size of the plane
         Debug.Log("House" + center.ToString() + " " + objectSize.ToString());
+        //Calcuate vertixes of the house area
         float top_left_x = center.x - (objectSize.x/2); //start x coordinate 
         float top_left_z = center.z - (objectSize.z/2); //start y coordinate
         float bot_right_x = center.x + (objectSize.x/2); //end x coordinate
@@ -71,9 +71,8 @@ public class Game_Manager : GazeableObject
     public override void OnPress(RaycastHit hitInfo)
     {
         base.OnPress(hitInfo);
-        //Check if we end the game
+        //Check if we win the game
         if (myPlayer.instance.collected_mushrooms() == mushrooms_numbers){
-            //CHANGE text in the button and destroy this script
             this.GetComponentInChildren<Text>().text = "Win!";
             Destroy(this);
         } 

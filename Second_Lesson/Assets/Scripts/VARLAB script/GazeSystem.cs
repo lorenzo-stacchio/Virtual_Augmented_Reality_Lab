@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class GazeSystem : MonoBehaviour {
 
 	public GameObject reticle; 
@@ -44,10 +45,10 @@ public class GazeSystem : MonoBehaviour {
 			if (gazeObj != null) { // it is gazeable
 				// Object we are looking at is different then before
 				if (gazeObj != currentGazeObject) {
-					ClearCurrentObject ();
+					ClearCurrentObject();
 					currentGazeObject = gazeObj;
 					currentGazeObject.OnGazeEnter (hitInfo);
-					SetReticleColor (activeReticleColor);
+					SetReticleColor(activeReticleColor);
 				}
 				// Object we are looking at is the same then before
 				else {
@@ -64,11 +65,13 @@ public class GazeSystem : MonoBehaviour {
 		}
 	}
 
+
 	private void SetReticleColor(Color reticleColor)
 	{
 		//Set the color of the reticle
 		reticle.GetComponent<Renderer>().material.SetColor("_Color", reticleColor);
 	}
+
 
 	private void CheckForInput(RaycastHit hitInfo)
 	{

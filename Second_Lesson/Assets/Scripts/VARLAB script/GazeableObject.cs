@@ -3,118 +3,61 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
+/*
+This class works as a trait, because it main goal is to provide an interface but we could put implementations. 
+To reach this goal, we use the virtual keyword which is used to declare a method, property, indexer, or event allowing
+for it to be overridden in a derived class. 
+
+To note that all the Unity scripts derives from MonoBehaviour object.
+*/
+
 public class GazeableObject : MonoBehaviour {
-
-	// flag: can i transform the selected object?
-	public bool isTransformable = false;
-
-	// variables for GazeTranslate
-	private int objectLayer;
-	private const int IGNORE_RAYCAST_LAYER = 2;
-
-	// variables for GazeRotate
-	private Vector3 initialObjectRotation;
-	private Vector3 initialPlayerRotation;
-
-//	// variables for GazeScale
-//	private Vector3 initialObjectScale;
-
+	
+	//Your fields here
 
 	public virtual void OnGazeEnter(RaycastHit hitInfo)
 	{
+		//METHOD TO MANAGE ACTIONS WHEN RAYCAST ENTER THE OBJECT AREA 
 		//Debug.Log ("Gaze entered on " + gameObject.name); 
+		//YOUR CODE HERE
 	}
 
 	public virtual void OnGaze(RaycastHit hitInfo)
 	{
+		//METHOD TO MANAGE ACTIONS WHEN RAYCAST STAY IN THE OBJECT AREA 
 		//Debug.Log ("Gaze hold on " + gameObject.name); 
+		//YOUR CODE HERE
 	}
 	 
 	public virtual void OnGazeExit()
 	{
+		//METHOD TO MANAGE ACTIONS WHEN RAYCAST EXIT THE OBJECT AREA 
 		//Debug.Log ("Gaze exited on " + gameObject.name); 
+		//YOUR CODE HERE
 	}
 
 
 	public virtual void OnPress(RaycastHit hitInfo)
 	{
-		//Debug.Log ("Button pressed"); 
-		if (isTransformable) {
-			
-			// set for GazeTranslate
-			objectLayer = gameObject.layer; //save here initial value
-			//gameObject.layer = IGNORE_RAYCAST_LAYER;
-
-			// set for GazeRotate
-			initialObjectRotation = transform.rotation.eulerAngles;
-			initialPlayerRotation = Camera.main.transform.eulerAngles;
-
-			// set for GazeScale
-//			initialObjectScale = transform.localScale;
-		}
+	    //METHOD TO MANAGE ACTIONS WHEN RAYCAST IS HOLDING AN OBJECT
+		//Debug.Log ("Button hold"); 
+		//YOUR CODE HERE
 	}
 
 
 	public virtual void OnHold(RaycastHit hitInfo)
 	{
+		//METHOD TO MANAGE ACTIONS WHEN RAYCAST IS HOLDING AN OBJECT
 		//Debug.Log ("Button hold"); 
-		if (isTransformable) {
-			GazeTranform (hitInfo);
-			//Debug.Log ("GazeTranform done");
-		}
+		//YOUR CODE HERE
 	}
 
 
 	public virtual void OnRelease(RaycastHit hitInfo)
 	{
-		//Debug.Log ("Button released" ); 
-		if (isTransformable) {
-			//gameObject.layer = objectLayer; //back to initial value
-		}
-		 
-	}
-
-
-	public virtual void GazeTranform (RaycastHit hitInfo)
-	{
-
-		switch (myPlayer.instance.activeMode) 
-		{
-
-/*		case InputMode.TRANSLATE:   //move the obj (change position)
-			GazeTranslate (hitInfo);
-			break;
-		case InputMode.ROTATE: 	//change the object orientation 
-			GazeRotate (hitInfo);
-			break;
-		case InputMode.SCALE: //make the object bigger/smaller
-			GazeScale (hitInfo);
-			break;
-*/		}
-	}
-
-
-	public virtual void GazeTranslate (RaycastHit hitInfo) // to translate an isTransformable object
-	{
-		if (hitInfo.collider != null && hitInfo.collider.GetComponent<MoveableArea> ()) {
-			
-			transform.position = hitInfo.point; 
-
-		}
-
-
-	}
-
-	public virtual void GazeRotate (RaycastHit hitInfo) // to rotate an isTransformable object
-	{
-		float rotationSpeed = 10.0f ;
-		Vector3 currentPlayerRotation = Camera.main.transform.rotation.eulerAngles; // 3 rotation components of Camera
-		Vector3 currentObjectRotation = transform.rotation.eulerAngles; // 3 rotation components from Inspector
-		Vector3 rotationDelta = currentPlayerRotation - initialPlayerRotation; // it corresponds to the effective head rotation
-		// rotation is olny around Y 
-		Vector3 newRotation = new Vector3 (currentObjectRotation.x, initialObjectRotation.y+(rotationSpeed*rotationDelta.y), currentObjectRotation.z); // .x e .z componets do not change
-		// execution of newRotation
-		transform.rotation = Quaternion.Euler(newRotation);
+		//METHOD TO MANAGE ACTIONS WHEN RAYCAST RELEASE AN OBJECT
+		//Debug.Log ("Button released");  
+		//YOUR CODE HERE
 	}
 
 

@@ -8,11 +8,6 @@ using UnityEngine.UI;
 public class mushroom : GazeableObject
 {
 
-    
-	public void Start(){
-
-	}
-
     public override void OnPress(RaycastHit hitInfo)
     {
         base.OnPress(hitInfo);  
@@ -20,7 +15,6 @@ public class mushroom : GazeableObject
             myPlayer.instance.collect_mushroom();
             Destroy(gameObject);
         }
-        //Destroy(this);
     }
 
 }

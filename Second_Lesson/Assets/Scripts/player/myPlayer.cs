@@ -32,21 +32,21 @@ public class myPlayer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        this.activeMode = InputMode.TELEPORT;
+        this.activeMode = InputMode.NONE;
     }
 
 
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log(this.activeMode);
+        Debug.Log("user" + this.activeMode.ToString());
     }
 
 
     public void collect_mushroom(){
         this.mushrooms_collected +=1;
-        Debug.Log("NUMERO FUNGHI");
-        Debug.Log(this.mushrooms_collected);
+        //Debug.Log("NUMERO FUNGHI");
+        //Debug.Log(this.mushrooms_collected);
     } 
 
     public int collected_mushrooms(){
