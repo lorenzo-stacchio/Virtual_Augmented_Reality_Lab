@@ -11,41 +11,32 @@ public enum InputMode
 }
 
 
-public class myPlayer : MonoBehaviour
+public class WoodMan : myPlayer
 {
-    public static myPlayer instance;
+    public static WoodMan instance;
     public InputMode activeMode;
     public int mushrooms_collected;  
 
 
-    void Awake()
+    // Start is called before the first frame update
+    public override void Start()
     {
-        if (instance != null)
-        {
-            GameObject.Destroy(instance.gameObject);
-        }
         instance = this;
         this.mushrooms_collected = 0;  
-    }
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
         this.activeMode = InputMode.NONE;
     }
 
 
     // Update is called once per frame
-    void Update()
+    public override void Update()
     {
-        //Debug.Log("user" + this.activeMode.ToString());
+        Debug.Log("user" + this.activeMode.ToString());
     }
 
 
     public void collect_mushroom(){
         this.mushrooms_collected +=1;
-        //Debug.Log("NUMERO FUNGHI");
+        //Debug.Log("Mushrooms collected");
         //Debug.Log(this.mushrooms_collected);
     } 
 

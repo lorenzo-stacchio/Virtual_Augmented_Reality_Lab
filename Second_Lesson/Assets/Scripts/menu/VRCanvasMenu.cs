@@ -2,46 +2,47 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class VRCanvas : MonoBehaviour {
+public class VRCanvasMenu : VRCanvas {
 
-	public GazeableButton currentActiveButton;
+	public Menu_button currentActiveButton;
 	public Color unselectedColor = Color.white;
 	public Color selectedColor = Color.green;
 
 	// Use this for initialization
-	void Start () {
-		
+	public override void Start () {
+		base.Start();
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	public override void Update () {
+		base.Start();
 		LookAtPlayer ();
 	}
 
 
-	public void SetActiveButton(GazeableButton activeButton)
+	public void SetActiveButton(Menu_button activeButton)
 	{
 		// If there was previously active button, disable it
 		if (currentActiveButton != null) {
 			//set player mode to none and change color button
 			currentActiveButton.SetButtonColor(unselectedColor);
-			myPlayer.instance.activeMode = InputMode.NONE;
+			WoodMan.instance.activeMode = InputMode.NONE;
 		}
 		if (activeButton != null && currentActiveButton != activeButton) {
 			currentActiveButton = activeButton;
 			currentActiveButton.SetButtonColor(selectedColor);
-			myPlayer.instance.activeMode = activeButton.getRepresentativeMode();
-			//Debug.Log("player setting in VR CANVAS" + myPlayer.instance.activeMode.ToString());
+			WoodMan.instance.activeMode = activeButton.getMode();
+			//Debug.Log("player setting in VR CANVAS" + WoodMan.instance.activeMode.ToString());
 		} else {
 			//Debug.Log ("Resetting");
 			currentActiveButton = null;
-			myPlayer.instance.activeMode = InputMode.NONE;
+			WoodMan.instance.activeMode = InputMode.NONE;
 		}
 	}
 
 	public void LookAtPlayer()
 	{
-		Vector3 playerPos = myPlayer.instance.transform.position; //player position
+		Vector3 playerPos = WoodMan.instance.transform.position; //player position
 		Vector3 vecToPlayer = playerPos - transform.position; //distance between the player and the VRCanvas
 		Vector3 lookAtPos = transform.position - vecToPlayer; //position vector used in the lookAt method  
 		//Debug.Log("player pos" + playerPos.ToString());

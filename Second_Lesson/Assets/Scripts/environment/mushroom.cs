@@ -11,8 +11,8 @@ public class mushroom : GazeableObject
     public override void OnPress(RaycastHit hitInfo)
     {
         base.OnPress(hitInfo);  
-        if(myPlayer.instance.activeMode == InputMode.COLLECT){  
-            myPlayer.instance.collect_mushroom();
+        if(WoodMan.instance.activeMode == InputMode.COLLECT){  
+            WoodMan.instance.collect_mushroom();
             Destroy(gameObject);
         }
     }

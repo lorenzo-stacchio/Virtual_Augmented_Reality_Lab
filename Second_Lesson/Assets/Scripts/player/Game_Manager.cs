@@ -72,12 +72,12 @@ public class Game_Manager : GazeableObject
     {
         base.OnPress(hitInfo);
         //Check if we win the game
-        if (myPlayer.instance.collected_mushrooms() == mushrooms_numbers){
+        if (WoodMan.instance.collected_mushrooms() == mushrooms_numbers){
             this.GetComponentInChildren<Text>().text = "Win!";
             Destroy(this);
         } 
         else{
-            this.GetComponentInChildren<Text>().text = (mushrooms_numbers - myPlayer.instance.collected_mushrooms()).ToString() + " left!";
+            this.GetComponentInChildren<Text>().text = (mushrooms_numbers - WoodMan.instance.collected_mushrooms()).ToString() + " left!";
         }
 
 
