@@ -472,7 +472,7 @@ GameObject:
   m_Component:
   - component: {fileID: 316246065}
   m_Layer: 0
-  m_Name: room
+  m_Name: environment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -664,6 +664,7 @@ GameObject:
   - component: {fileID: 808833589}
   - component: {fileID: 808833591}
   - component: {fileID: 808833590}
+  - component: {fileID: 808833592}
   m_Layer: 0
   m_Name: Panel
   m_TagString: Untagged
@@ -725,6 +726,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 808833588}
   m_CullTransparentMesh: 0
+--- !u!114 &808833592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 808833588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1dc91ef03bfd2b44288c868792439a6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &837315221
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1040,7 +1053,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 977702751}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46f3873ba515dc645b27c380aaf60881, type: 3}
+  m_Script: {fileID: 11500000, guid: d4bdded14a2e0504786ace0ede1edba8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!64 &977702754
@@ -2241,7 +2254,7 @@ GameObject:
   - component: {fileID: 1926992231}
   - component: {fileID: 1926992232}
   m_Layer: 0
-  m_Name: Player
+  m_Name: Woodman
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

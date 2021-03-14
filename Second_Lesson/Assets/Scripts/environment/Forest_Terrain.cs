@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class Floor : GazeableObject {
-
+public class Forest_Terrain : GazeableObject {
 	public override void OnPress (RaycastHit hitInfo)
 	{
 		base.OnPress (hitInfo);
@@ -16,5 +15,4 @@ public class Floor : GazeableObject {
 		}
 
 	}
-
 }
