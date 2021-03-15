@@ -51,5 +51,4 @@ public class VRCanvasMenu : VRCanvas {
 		// Rotate the Menu so it keeps looking at the player
 		transform.LookAt (lookAtPos);
 	}
-
 }

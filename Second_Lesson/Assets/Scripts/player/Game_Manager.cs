@@ -9,7 +9,7 @@ public class Game_Manager : GazeableObject
 	public static bool end;
     int shifting_bound = 2; //use to avoid to spawn at the limits of the playground
     [SerializeField]
-    private int mushrooms_numbers;
+    private int mushrooms_numbers; //number of mushrooms you want to spawn
     public GameObject playground;
     public GameObject myPrefab;
     public GameObject house_to_avoid; 
@@ -17,7 +17,7 @@ public class Game_Manager : GazeableObject
 	public void Start(){
 		end = false;
         //get mushroom objects
-        GameObject mushrooms = GameObject.Find("mushrooms");
+        GameObject mushrooms = GameObject.Find("mushrooms_field");
         //Calcuate vertixes of the house area
         Vector3 center = playground.GetComponent<MeshRenderer>().bounds.center; //get the center of the plane
         Vector3 objectSize = playground.GetComponent<MeshRenderer>().bounds.size; //get size of the plane
