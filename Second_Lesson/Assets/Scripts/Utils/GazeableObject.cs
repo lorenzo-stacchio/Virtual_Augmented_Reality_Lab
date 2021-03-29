@@ -11,7 +11,7 @@ for it to be overridden in a derived class.
 To note that all the Unity scripts derives from MonoBehaviour object.
 */
 
-public class GazeableObject : MonoBehaviour {
+public abstract class GazeableObject : MonoBehaviour {
 	
 	//Your fields here
 

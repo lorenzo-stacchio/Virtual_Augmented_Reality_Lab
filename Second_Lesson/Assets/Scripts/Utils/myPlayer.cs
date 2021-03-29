@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class myPlayer : MonoBehaviour
+public abstract class myPlayer : MonoBehaviour
 {
 
     // Start is called before the first frame update

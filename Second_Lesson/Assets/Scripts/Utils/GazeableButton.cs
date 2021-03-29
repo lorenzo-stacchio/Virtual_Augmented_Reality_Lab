@@ -12,7 +12,7 @@ We suppose that a Button will always lies within a Menu identified by VRCanvas p
 
 [RequireComponent(typeof(Image))]
 
-public class GazeableButton : GazeableObject {
+public abstract class GazeableButton : GazeableObject {
 
 
 	// Use this for initialization

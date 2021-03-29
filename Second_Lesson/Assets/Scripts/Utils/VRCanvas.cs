@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class VRCanvas : MonoBehaviour {
+public abstract class VRCanvas : MonoBehaviour {
 
 	// Use this for initialization
 	public virtual void Start () {
