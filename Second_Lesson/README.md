@@ -20,5 +20,5 @@ Once the Android SDK,NDK and JDK is installed in your system, you could deploy y
 ## Troubleshooting
 
 The sdk, along with the NDK, can be installed in two different file system locations:
-* The Windows **user** dir, precisely under ```C:\Users\**user**\AppData\Local\Android\```;
+* **(Suggested)** The Windows **user** dir, precisely under ```C:\Users\**user**\AppData\Local\Android\```;
 * In any directory of a non-system disk, as long as the father dir is named as **Android** (e.g. ```D:\Android\```), 
